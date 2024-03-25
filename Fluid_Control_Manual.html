@@ -64,8 +64,17 @@
 		margin-top: 10px;
 		margin-bottom: 30px;
 	}
+	p::after, .clear {
+		float:none;
+		clear: both;
+	}
 	.cryptedmail:after {
 		content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
+	}
+	.left {
+		float:left;
+		margin-right:20px;
+		margin-bottom: 20px;
 	}
 </style>
 
@@ -86,6 +95,7 @@
 
 		<h2>Connect to FluidNC</h2>
 		<p>
+			<img src="https://mitov84.github.io/images_fluid/manual/screen_settings_c.jpg" alt="Settings screen" width="50%" class="left"/>
 			This application is using telnet port for communication with FluidNC controller. Before you attemp connecting to the machine make sure 
 			machine is connected to your Wi-Fi network and Telnet is enabled. To do this open a terminal to the machine and follow instructions <a href="http://wiki.fluidnc.com/en/features/wifi_bt">here</a>.
 			<br/><br/>
@@ -95,19 +105,25 @@
 			<br/>
 			On succesfull connection app will fetch current machine status, application buttons will become enabled and active G-codes will glow green.
 			
-			<br/><img src="https://mitov84.github.io/images_fluid/manual/screen_settings_b.jpg" alt="Settings screen" height="400px" />
+			<br/><br/>
 		</p>
+		<div class="clear"></div>
 	
 
 		<h2>Jog tab</h2>
 		<p>
+			<img src="https://mitov84.github.io/images_fluid/manual/screen_jog.jpg" alt="Settings screen" width="50%" class="left"/>
 			Top quarter of display show current work and machine position. <br/>
 			Yellow buttons next to each coordinate axis sets the current machine position as work start coordinate in currently selected coordinate system.<br/>
 			Feed and step display the currently selected jog feed and step. Tab on them to change the feed and step. Supports decimal numbers.
+			<br/><br/>
+			Jog buttons for 4th axis will appear only if machine is configure to have 4 axesis. Feature is available only to Pro users.
 		</p>
 
 		<h2>Terminal tab</h2>
 		<p>
+			<img src="https://mitov84.github.io/images_fluid/manual/screen_temrinal.jpg" alt="Settings screen" width="50%" class="left"/>
+
 			Used to send user commands to the machine. Display up to 50 rows. White are machine output, blue are user input.<br/>
 			On top of the terminal you have 6 application macros. Configure the in settings with custom code you need to send to the machine. Supports multi line code.
 			<br/>
@@ -116,6 +132,8 @@
 
 		<h2>Job tab</h2>
 		<p>
+			<img src="https://mitov84.github.io/images_fluid/manual/screen_job.jpg" alt="Settings screen" width="50%" class="left"/>
+
 			This tab is use to send .nc or .gcode files to the machine. Application acts as G-code sender.<br/>
 			Jobs are running in foreground service and will display total lines and lines sent in app notification.<br/>
 			You can pause/resume jobs at any time.
@@ -126,6 +144,8 @@
 
 		<h2>Spindle tab</h2>
 		<p>
+			<img src="https://mitov84.github.io/images_fluid/manual/screen_spindle.jpg" alt="Settings screen" width="50%" class="left"/>
+
 			Controls the spindle and coolant. <br/>
 			FluidNC will allow for spindle, mist and flood enabling only if they are assigned control pins on the controller.<br/>
 			Otherwise sending command to enable spidle or coolants will not have any effect<br/>
@@ -136,38 +156,6 @@
 		</p>
 
 
-		<h2>Screenshots</h2>
-		<ul class="screenshots">
-			<li>
-				<a href="https://mitov84.github.io/images_fluid/jog.jpg" target="_blank" >
-					<img src="https://mitov84.github.io/images_fluid/jog.jpg" alt="Jog control" height="300px" />
-				</a>
-			</li>
-			<li>
-				<a href="https://mitov84.github.io/images_fluid/terminal.jpg" target="_blank" >
-					<img src="https://mitov84.github.io/images_fluid/temrinal.jpg" alt="Terminal" height="300px" />
-				</a>
-			</li>
-			<li>
-				<a href="https://mitov84.github.io/images_fluid/job.jpg" target="_blank" >
-					<img src="https://mitov84.github.io/images_fluid/job.jpg" alt="File sender" height="300px" />
-				</a>
-			</li>
-			<li>
-				<a href="https://mitov84.github.io/images_fluid/spindle.jpg" target="_blank" >
-					<img src="https://mitov84.github.io/images_fluid/spindle.jpg" alt="Spindle control" height="300px" />
-				</a>
-			</li>
-
-		</ul>
-	
-		
-		<h2>Documents</h2>
-		<ul>
-			<li><a href="https://mitov84.github.io/FluidControl_Terms.html">Tersm and Conditions</a></li>
-			<li><a href="https://mitov84.github.io/FluidControl_Privacy_Policy.html#">Privacy policy</a></li>
-		</ul>
- 
 		<h2>Contact & Feedback</h2>
 		<p data-name="support" data-domain="gps-family" data-tld="com" class="cryptedmail">If you have any questions or recommendations please drop us a line at </p>
  
